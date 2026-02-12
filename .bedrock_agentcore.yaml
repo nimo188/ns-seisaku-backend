@@ -1,0 +1,65 @@
+default_agent: ns_seisaku
+agents:
+  ns_seisaku:
+    name: ns_seisaku
+    entrypoint: "C:/Users/\u6E21\u8FBA\u5B97\u592A/Documents/\u30DE\u30B8\u51AC/strands/app.py"
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: "C:\\Users\\\u6E21\u8FBA\u5B97\u592A\\Documents\\\u30DE\u30B8\u51AC\
+      \\strands"
+    aws:
+      execution_role: arn:aws:iam::251103102214:role/AmazonBedrockAgentCoreSDKRuntime-ap-northeast-1-139272ac7b
+      execution_role_auto_create: false
+      account: '251103102214'
+      region: ap-northeast-1
+      ecr_repository: 251103102214.dkr.ecr.ap-northeast-1.amazonaws.com/bedrock-agentcore-ns_seisaku
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: ns_seisaku-KLXZ354PzF
+      agent_arn: arn:aws:bedrock-agentcore:ap-northeast-1:251103102214:runtime/ns_seisaku-KLXZ354PzF
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-ns_seisaku-builder
+      execution_role: arn:aws:iam::251103102214:role/AmazonBedrockAgentCoreSDKCodeBuild-ap-northeast-1-139272ac7b
+      source_bucket: bedrock-agentcore-codebuild-sources-251103102214-ap-northeast-1
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.ap-northeast-1.amazonaws.com/ap-northeast-1_aigG6XB7v/.well-known/openid-configuration
+        allowedClients:
+        - 202sa5o3o4iq0bncdn3r27npi9
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
